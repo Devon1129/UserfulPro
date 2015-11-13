@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 設定 android:layout_width="wrap_content" 控件盡可能的小
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal" >
+    
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:background="#9f00"
+       android:text="1"
+       android:gravity="center"  />
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="match_parent"
+       android:layout_weight="2"
+       android:background="#90f0"
+       android:text="2"
+       android:gravity="center"  />
+</LinearLayout>
+ -->
+ 
+ <!--設定 android:layout_width="0dp"，weight的值越大， 占的布局越大-->
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:orientation="horizontal" >
+    
+   <TextView
+       android:layout_width="0dp"
+       android:layout_height="match_parent"
+       android:layout_weight="1"
+       android:background="#9f00"
+       android:text="1111111111111111111111111111111111111"
+       android:gravity="center" />
+   <TextView
+       android:layout_width="0dp"
+       android:layout_height="match_parent"
+       android:layout_weight="2"
+       android:background="#90f0"
+       android:text="2"
+       android:gravity="center" />
+</LinearLayout>
+
+<!-- http://www.chenyunchao.com/?p=148  android中layout_weight的用法（比例、算法、换行、标准写法等）-->

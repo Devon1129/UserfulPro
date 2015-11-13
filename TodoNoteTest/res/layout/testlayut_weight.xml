@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+ -->
+<!-- 第一種:均分
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#000" />
+ 
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+ 
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#888" />
+ -->
+ 
+ <!-- 第二種:占滿剩餘空間
+ <FrameLayout
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:background="#000" />
+ 
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+ 
+    <FrameLayout
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:background="#888" />
+  -->
+  
+<!--第三種:值愈大占的空間愈小
+   <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#000" />
+ 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1.5"/>
+ 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="#000" />
+-->
+
+<!--第四種:結合 weightSum使用，將控件放在螢幕中央，寬度為螢幕的一半 -->   
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:weightSum="2" >
+ <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+        
+ </LinearLayout>
+ 
+<!-- http://mengxin.leanote.com/post/android-layout_weight%E7%9A%84%E7%94%A8%E6%B3%95.
+ android:layout_weight的用法.-->
+ 
