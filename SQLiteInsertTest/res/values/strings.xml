@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Test</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="cusNo">cusNo</string>
+    <string name="cusNa">cusNa</string>
+    <string name="cusPho">cusPho</string>
+    <string name="cusAdd">cusAdd</string>
+
+</resources>
