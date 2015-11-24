@@ -1,0 +1,36 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btnMars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mars" />
+
+    <Button
+        android:id="@+id/btnMoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/moon" />
+
+   
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+     <TextView
+        android:id="@+id/textView1_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView1" />
+     <TextView
+         android:id="@+id/textView2_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView2" />
+        
+    </LinearLayout>
+
+</LinearLayout>
