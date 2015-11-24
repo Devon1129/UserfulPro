@@ -35,7 +35,7 @@ public class MainActivity_Space extends Activity {
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		switch(requestCode){
-		case mRequestCode://§]•i•H®œ•Œ RESULT_OK
+		case mRequestCode://‰πüÂèØ‰ª•‰ΩøÁî® RESULT_OK
 			Bundle bundle = data.getExtras();
 			String StrIP = bundle.getString("IP");
 			Toast.makeText(MainActivity_Space.this, StrIP, Toast.LENGTH_SHORT).show();

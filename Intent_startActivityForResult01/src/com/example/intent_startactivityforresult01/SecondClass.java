@@ -27,8 +27,8 @@ public class SecondClass extends Activity {
 				EditText etHttp = (EditText)findViewById(R.id.ethttp);
 				String Http = etHttp.getText().toString();
 				
-				//MainActivity_Space¨S¦³¶Ç¸ê®Æ¹L¨Ó
-				Intent intent = new Intent();//³]©w intent¶Ç»¼ªº¸ê®Æ.
+				//MainActivity_Spaceæ²’æœ‰å‚³è³‡æ–™éä¾†
+				Intent intent = new Intent();//è¨­å®š intentå‚³éçš„è³‡æ–™.
 				Bundle bundle = new Bundle();
 				bundle.putString("IP", Http);
 				intent.putExtras(bundle);
