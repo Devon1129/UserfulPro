@@ -27,6 +27,10 @@
             android:name="com.example.startactivityforresult_test.Earth">
         </activity>
         
+        <activity 
+            android:name="com.example.startactivityforresult_test.Earth_2">
+        </activity>
+        
     </application>
 
 </manifest>
