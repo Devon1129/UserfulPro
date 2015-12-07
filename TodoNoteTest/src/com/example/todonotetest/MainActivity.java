@@ -45,8 +45,6 @@ public class MainActivity extends ListActivity {
 		 if(cursor.getCount() == 0){
 	        	mDBManipulate.createTodo("this is category", "this is summary", "this is description");
 	        }
-//		 cursor.close();//Q:在何時關閉才適合?
-		
 		 
 		 //2.2 讀取所有 todo，並填入至 ListView.
         fillData();
@@ -55,8 +53,22 @@ public class MainActivity extends ListActivity {
         registerForContextMenu(getListView());//+1
         
         btnActivity();
+                
+        /*
+         *  不確定哪裡關閉cursor
+         *  因此 使用 android提供的 startManagingCursor(cursor);
+         *  使 cursor由它管理。
+         *  
+         *  This method allows the activity to take care of managing the given Cursor's lifecycle 
+         *  for you based on the activity's lifecycle. 
+         *  That is, when the activity is stopped it will automatically call deactivate() on the given Cursor, 
+         *  and when it is later restarted it will call requery() for you. 
+         *  When the activity is destroyed, all managed Cursors will be closed automatically. 
+         *  If you are targeting HONEYCOMB or later, 
+         *  consider instead using LoaderManager instead, available via getLoaderManager().
+         */
+//        cursor.close();
         
-//        cursor.close();//Q:在何時關閉才適合?
     }
     
     public void btnActivity(){
@@ -174,12 +186,13 @@ public class MainActivity extends ListActivity {
     
     //填充資料於 ListView上
     private void fillData(){
-    	Cursor cursor = mDBManipulate.getAllData();
-		startManagingCursor(cursor);
+    	//getData()已有 return cursor了，因此這裡不用再叫
+    	//Cursor cursor = mDBManipulate.getAllData();
+		//startManagingCursor(cursor);
         
         //讀取所有 todo,並顯示至ListView.
         SimpleCursorAdapter adapter = new SimpleCursorAdapter(this, R.layout.todo_row, getData(),
-        		new String[]{mDBManipulate.KEY_CATEGORY, mDBManipulate.KEY_SUMMARY}, 
+        		new String[]{DBManipulate.KEY_CATEGORY, DBManipulate.KEY_SUMMARY}, 
         		new int[]{R.id.todotype, R.id.summary});
         setListAdapter(adapter);
     }
