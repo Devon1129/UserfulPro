@@ -4,10 +4,11 @@
     <string name="app_name">TodoNoteTest</string>
     <string name="hello_world">Hello world!</string>
     <string name="btntitle">Enter your todo</string>
+    <string name="memu_delete">刪除</string>
+    
     <string-array name="todotype">
         <item>Urgent</item>
         <item>Reminder</item>
     </string-array>
     
-
 </resources>

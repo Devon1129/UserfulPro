@@ -78,7 +78,7 @@ public class Details extends Activity {
 		}
 	}
 	
-	//填寫欄位  **做到這了
+	//填寫欄位  
 	public void populateFields(){
 		if(mRowId != null){
 			Cursor curTodo = mDBManipulate.getData(mRowId);
