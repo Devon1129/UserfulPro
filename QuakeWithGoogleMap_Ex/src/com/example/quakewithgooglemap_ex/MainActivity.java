@@ -16,6 +16,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+	JSONArray mCoordinates; 
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,16 +53,56 @@ public class MainActivity extends Activity {
         
         
         JSONObject geometry = featuresOne.getJSONObject("geometry");
-        JSONArray coordinates = geometry.getJSONArray("coordinates");
+        mCoordinates = geometry.getJSONArray("coordinates");
         
+//      todo this...
+        showMsg();
         
-        Log.e("Ex", coordinates.toString());
+        LatLon alatLon = new LatLon();
+        String tmpLatLon = "";
+		
+		List<LatLon> posClassList = new ArrayList<LatLon>();
+		List<String>  latlonList = new ArrayList<String>();
+		posClassList.add(alatLon);//return boolean type.
+		latlonList.add(tmpLatLon);
+		
+        Log.e("Ex", mCoordinates.toString());
         
-        String[] Str ={place, time, coordinates.toString()};
+        String[] Str ={place, time, mCoordinates.toString()};
         
         ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, Str);
         lv.setAdapter(adapter);
         
         List<String> q = new ArrayList<String>(); 
+	}
+	
+	
+	public void showMsg() throws JSONException{
+		//使用 class賦值
+	//  LatLon alatLon = new LatLon();
+	//	alatLon.lat = coordinates.getDouble(0);
+	//	alatLon.lon = coordinates.getDouble(1);
+	//	
+	//	Toast.makeText(MainActivity.this,
+	//			"Lat: " + alatLon.lat
+	//			+ " Lon:" + alatLon.lon 
+	//			+ " dep:" + coordinates.getDouble(2) + "" , Toast.LENGTH_LONG).show();
+		
+		String tmpLatLon = "";
+		
+	    //type為 double.，要串接，type需為 String類型
+		LatLon alatLon = new LatLon();
+		alatLon.lon = mCoordinates.getDouble(0);
+		alatLon.lat = mCoordinates.getDouble(1);
+		
+		for(int i = 0; i < mCoordinates.length(); i++){
+			tmpLatLon += String.valueOf(mCoordinates.getString(i) + "|");
+			if(i == 1){
+				break;
+				//return會返回到 call此 method的位置
+				//finish會直接結束程式，but Toast有出現
+			}
+		}
+		Toast.makeText(MainActivity.this, "msg: " + tmpLatLon, Toast.LENGTH_LONG).show();
 	}
 }
